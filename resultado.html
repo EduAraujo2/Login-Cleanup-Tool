@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://play.natv.app/logo/favicon.png">
+  <title>Retorno</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(360deg, #8d8c8c, #ffffff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    .img_logo {
+      margin-bottom: 20px;
+    }
+    
+    .img_logo img {
+      max-width: 250px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .message {
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .instructions {
+      font-size: 1rem;
+      color: #0a0a0a;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      color: #fff;
+      background-color: #7a7979;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #1f1e1e;
+    }
+  </style>
+</head>
+<body>
+  <div class="img_logo">
+    <img src="https://central.vianet.online/img/logovianet.png" alt="VIA NET">
+  </div>
+  <div class="container">
+    <p class="message">Sua conexão foi limpa com sucesso!</p>
+    <p class="instructions">
+      Tente fazer login novamente em seu dispositivo. Caso o problema persista, entre em contato conosco 0800 957 0700.
+    </p>
+    <a href="{{ url_for('login') }}" class="button">Iniciar uma nova limpeza</a>
+  </div>
+</body>
+</html>

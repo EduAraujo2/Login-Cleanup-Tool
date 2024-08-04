@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://play.natv.app/logo/favicon.png">
+  <title>CDNTV/NATV</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(360deg, #8d8c8c, #ffffff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+    
+    .img_logo {
+      margin-bottom: 5px;
+    }
+    
+    .img_logo img {
+      max-width: 250px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    h1 {
+      color: #000; 
+      font-weight: bold; 
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: #555;
+      text-align: center; 
+      text-align: justify; 
+    }
+    
+    input[type="text"] {
+      width: calc(100% - 30px);
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: #1f1e1e; 
+    }
+    
+    input[type="text"]::placeholder {
+      color: #8a8888; 
+      font-style: italic; 
+      font-weight: bolder;
+    }
+    
+    input[type="submit"] {
+      background-color: #7a7979;
+      border: none;
+      color: #ffffff; 
+      padding: 15px 25px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: bold; 
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #1f1e1e;
+    }
+    
+    input[type="submit"]:disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="img_logo">
+    <img src="https://central.vianet.online/img/logovianet.png" alt="VIA NET">
+  </div>
+  <div class="container">
+    <h1>SEJA BEM-VINDO(A)!</h1>
+    <form action="{{ url_for('login') }}" method="post">
+      <label>Esta opção é para quem está com dificuldades para fazer login no aplicativo NATV. Digite seu login e clique em "Limpar Conexão".</label>
+      <input type="text" id="username" name="username" placeholder="Digite o seu login">
+      <input type="submit" value="Limpar Conexão" id="submitBtn" disabled>
+    </form>
+  </div>
+  <script>
+    const usernameField = document.getElementById("username");
+    const submitBtn = document.getElementById("submitBtn");
+
+    usernameField.addEventListener("input", function() {
+      submitBtn.disabled = usernameField.value.trim().length <= 3;
+    });
+  </script>
+</body>
+</html>
